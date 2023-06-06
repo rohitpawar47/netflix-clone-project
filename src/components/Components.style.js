@@ -1,27 +1,9 @@
 import styled from "styled-components";
 
 
-// Header & Banner Styles
+// Header Styling *************
 
-export const HeaderContainer = styled.header`
-    // background-image: url('../../assets/main-banner.jpeg');
-    background-image: url('https://rare-gallery.com/mocahbig/1310303-Narcos-HD-Wallpaper.jpg');
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-`;
-
-export const HeaderElementsWrapper = styled.div`
-    width: 95%;
-    max-width: 2000px;
-    margin-inline: auto;
-    display: grid;
-    grid-template-rows: repeat(4,1fr);
-    position: relative;
-`;
-
-export const LogoContainer = styled.div`
+export const LogoContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,8 +16,6 @@ export const LogoContainer = styled.div`
     z-index: 1;
     transition: all 0.5s ease-in;
     background: ${(props) => props.scrollAnimation ? 'black' : ''};
-
-
 `;
 
 export const NetflixLogo = styled.img`
@@ -48,27 +28,44 @@ export const NetflixAvatar = styled.img`
     cursor: pointer;
 `;
 
-export const TitleContainer = styled.div`
-    grid-row: 3/4;
-    // width: 95%;
-    // max-width: 2000px;
-    // margin: 0 auto;
+
+// Banner Styling *************
+
+export const BannerContainer = styled.div`
+    background-image: url('https://rare-gallery.com/mocahbig/1310303-Narcos-HD-Wallpaper.jpg');
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: grid;
+    grid-template-rows: repeat(8,1fr);
+    position: relative;
+    padding: 0 2em;
 `;
+
 
 export const Title = styled.h1`
     font-size: 3rem;
     letter-spacing: 1px;
     color: #fff;
+    grid-row: 4/5;
 `;
 
 export const Subtitle = styled.p`
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    font-size: 1.28rem;
+    font-weight: 500;
+    letter-spacing: .7px;
     color: #fff;
+    grid-row: 5/6;
+    margin: 0 1.7em;
+    position: absolute;
+    width: 550px;
 `;
 
 export const BannerButtonContainer = styled.div`
+    grid-row: 6/7;
     display: flex;
+    align-items: center;
 `;
 
 export const BannerButton = styled.button`
@@ -91,6 +88,16 @@ export const BannerButton = styled.button`
 
         &:is(:hover, :focus){
             background-color: lightgray;
-            // color: white;
         }
+`;
+
+export const BottomFader = styled.div`
+        grid-row: 8/9;
+        heigth: 75rem;
+        background-image: linear-gradient(
+            180deg,
+            transparent,
+            rgba(37,37,37,.6),
+            #111
+        );
 `;
