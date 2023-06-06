@@ -1,9 +1,24 @@
+import { useState, useEffect } from 'react';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { HiOutlinePlusSm } from 'react-icons/hi';
 
 import { Title, Subtitle, BannerContainer, BannerButton, BannerButtonContainer, BottomFader } from "./Components.style";
+import axios from '../axiosBaseUrl';
+import requests from '../Requests';
 
 export default function Banner() {
+
+    const [bannerDisplay, setBannerDisplay] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const request = await axios.get(requests.fetchNetflixOriginals);
+            const randomMovieNumber = Math.floor(Math.random() * request.data.results.length);
+            setBannerDisplay(request.data.results[randomMovieNumber]);
+            return request;
+        }
+        fetchData();
+    }, [])
 
     const readMore = (text) => {
         const limit = 80;
@@ -14,10 +29,11 @@ export default function Banner() {
         }
     };
 
+
     return (
-        <BannerContainer>
-            <Title>Narcos</Title>
-            <Subtitle>{readMore(`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.`)}</Subtitle>
+        <BannerContainer img={bannerDisplay?.backdrop_path}>
+            <Title>{bannerDisplay?.name || bannerDisplay?.title || bannerDisplay?.original_name}</Title>
+            <Subtitle>{readMore(`${bannerDisplay?.overview}`)}</Subtitle>
             <BannerButtonContainer>
                 <BannerButton>
                     <BsFillPlayFill />

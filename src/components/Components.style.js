@@ -32,7 +32,7 @@ export const NetflixAvatar = styled.img`
 // Banner Styling *************
 
 export const BannerContainer = styled.div`
-    background-image: url('https://rare-gallery.com/mocahbig/1310303-Narcos-HD-Wallpaper.jpg');
+    background-image: url(https://image.tmdb.org/t/p/original/${props => props.img});
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ export const BannerContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(8,1fr);
     position: relative;
-    padding: 0 2em;
+    
 `;
 
 
@@ -49,23 +49,25 @@ export const Title = styled.h1`
     letter-spacing: 1px;
     color: #fff;
     grid-row: 4/5;
+    padding: 0 .6em;
 `;
 
 export const Subtitle = styled.p`
     font-size: 1.28rem;
     font-weight: 500;
-    letter-spacing: .7px;
+    letter-spacing: .5px;
     color: #fff;
     grid-row: 5/6;
     margin: 0 1.7em;
     position: absolute;
-    width: 550px;
+    width: 500px;
 `;
 
 export const BannerButtonContainer = styled.div`
     grid-row: 6/7;
     display: flex;
     align-items: center;
+    padding: 0 2em;
 `;
 
 export const BannerButton = styled.button`
@@ -89,15 +91,59 @@ export const BannerButton = styled.button`
         &:is(:hover, :focus){
             background-color: lightgray;
         }
+
+        @media (max-width: 768px) {
+            padding: .3em 1em;
+        }
 `;
 
 export const BottomFader = styled.div`
         grid-row: 8/9;
-        heigth: 75rem;
+        width: 100wv;
         background-image: linear-gradient(
             180deg,
             transparent,
             rgba(37,37,37,.6),
             #111
         );
+`;
+
+// Rows Styling ****************
+
+export const RowContainer = styled.div`
+    width: 95%;
+    max-width: 2000px;
+    margin-inline: auto;
+    padding: 1em 0;
+    
+`;
+
+export const RowImageContainer = styled.div`
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: srcoll;
+        gap: .67em;
+        padding: 1em;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        
+`;
+
+
+export const RowTitle = styled.h2`
+        color: #fff;
+        margin-bottom: .5em;
+`;
+
+export const RowImage = styled.img`
+        max-width: 250px;
+        object-fit: cover;
+        transition: transform 550ms;
+        
+        &:is(:hover, :focus){
+            transform: scale(1.06);
+            opacity: 1;
+        }
 `;
