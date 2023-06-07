@@ -1,4 +1,5 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import './reset.css';
@@ -7,7 +8,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
     </div>
   );
 }

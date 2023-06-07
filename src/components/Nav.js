@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import { LogoContainer, NetflixLogo, NetflixAvatar } from "./Components.style";
 
 
-
-import { HeaderContainer, LogoContainer, NetflixLogo, NetflixAvatar, Title, Subtitle, TitleContainer, BannerButton, BannerButtonContainer, HeaderElementsWrapper, BottomFader } from "./Components.style";
 
 export default function Nav() {
 
@@ -26,7 +27,7 @@ export default function Nav() {
 
     return (
         <LogoContainer scrollAnimation={scrollAnimation}>
-            <NetflixLogo src="./assets/netflix-logo.png" alt="netflix logo"></NetflixLogo>
+            <Link to={'/'}><NetflixLogo src="./assets/netflix-logo.png" alt="netflix logo"></NetflixLogo></Link>
             <NetflixAvatar src="./assets/Netflix-avatar.png" alt="netflix-avatar"></NetflixAvatar>
         </LogoContainer>
     )
