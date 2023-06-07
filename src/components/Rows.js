@@ -7,7 +7,7 @@ import { RowImage, RowTitle, RowContainer, RowImageContainer } from "./Component
 export default function Rows({ title, fetchUrl, isLargeRow = false }) {
 
     const [rowsDisplay, setRowDisplay] = useState([]);
-
+    // console.log(rowsDisplay);
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
