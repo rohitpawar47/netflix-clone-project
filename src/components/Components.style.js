@@ -40,7 +40,7 @@ export const BannerContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(8,1fr);
     position: relative;
-    
+    // transition: all 350ms;
 `;
 
 
@@ -50,6 +50,7 @@ export const Title = styled.h1`
     color: #fff;
     grid-row: 4/5;
     padding: 0 .6em;
+    
 `;
 
 export const Subtitle = styled.p`
@@ -61,6 +62,7 @@ export const Subtitle = styled.p`
     margin: 0 1.7em;
     position: absolute;
     width: 500px;
+    
 `;
 
 export const BannerButtonContainer = styled.div`
@@ -68,6 +70,7 @@ export const BannerButtonContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 0 2em;
+    
 `;
 
 export const BannerButton = styled.button`
@@ -115,7 +118,7 @@ export const RowContainer = styled.div`
     max-width: 2000px;
     margin-inline: auto;
     padding: 1em 0;
-            
+
 `;
 
 export const RowImageContainer = styled.div`

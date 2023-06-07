@@ -3,7 +3,6 @@ import Nav from "../components/Nav";
 import Rows from "../components/Rows";
 import requests from "../Requests";
 
-'REACT_APP_API_KEY = 47ce569b2d7c5cd5e73f7392935bf0cb'
 export default function Home() {
     return (
         <div className="">

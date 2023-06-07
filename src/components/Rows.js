@@ -20,7 +20,7 @@ export default function Rows({ title, fetchUrl, isLargeRow = false }) {
     const baseUrl = 'https://image.tmdb.org/t/p/original/';
 
     const rowsElements = rowsDisplay.map((item) =>
-        <RowImage src={`${baseUrl}${isLargeRow ? item.poster_path :
+        <RowImage key={item.id} src={`${baseUrl}${isLargeRow ? item.poster_path :
             item.backdrop_path
             }`} alt={item.name} />
     );

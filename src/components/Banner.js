@@ -9,6 +9,13 @@ import requests from '../Requests';
 export default function Banner() {
 
     const [bannerDisplay, setBannerDisplay] = useState([]);
+    const [bannerImageChange, setBannerImageChange] = useState(false);
+
+    useEffect(() => {
+        setInterval(() => {
+            setBannerImageChange(prev => !prev);
+        }, 30000);
+    }, [])
 
     useEffect(() => {
         async function fetchData() {
@@ -18,7 +25,7 @@ export default function Banner() {
             return request;
         }
         fetchData();
-    }, [])
+    }, [bannerImageChange])
 
     const readMore = (text) => {
         const limit = 80;
