@@ -115,7 +115,7 @@ export const RowContainer = styled.div`
     max-width: 2000px;
     margin-inline: auto;
     padding: 1em 0;
-    
+            
 `;
 
 export const RowImageContainer = styled.div`
